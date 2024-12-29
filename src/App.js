@@ -7,9 +7,10 @@ function App() {
   return (
     <div className='app'>
       <NavBar />
-      <Footer />
+     
     </div>
   );
 }
 
 export default App;
+  
