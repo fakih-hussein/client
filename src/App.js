@@ -1,12 +1,11 @@
 import './App.css';
-import NavBar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import SignIn from './pages/SignIn/SignIn';
 // import "./ui/styles/base.css"
 
 function App() {
   return (
     <div className='app'>
-      <NavBar />
+      <SignIn />
      
     </div>
   );
