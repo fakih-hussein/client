@@ -1,22 +1,31 @@
 import React from "react";
+import "./SignIn.css"
 import logo from "./../../assets/images/logo.png"
 import Glogo from "./../../assets/images/google-logo.png"
 import "./../../ui/styles/base.css"
 
 const SignIn = () => {
     return (
-        <div className="main-div flex column center">
-            <div className="logo"><img src={logo} alt="logo" /></div>
-            <p className="bold">Sign In</p>
-            <p>Sign in to save your trip plans and access them on any device.</p>
-            <p>New to Plan Mate AI? <a href="#signup" className="bold">Sign Up</a></p>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button type="submit">Continue</button>
-            <div>
-                <button><img src={Glogo}/>Continue with google</button>
+        <main>
+            <div className="form flex column center">
+
+                <div className="flex column center">
+                    <div className="logo"><img src={logo} alt="logo" /></div>
+                    <p className="title bold">Sign In</p>
+                    <p className="subtitle">Sign in to save your trip plans and access them on any device.</p>
+                </div>
+                <p className="link">New to Plan Mate AI? <a href="#signup" className="bold">Sign Up</a></p>
+                <div className="input flex column space-between">
+                    <input className="font-fam" type="email" placeholder="Email" />
+                    <input className="font-fam" type="password" placeholder="Password" />
+                    <button className="font-fam" type="submit">Continue</button>
+                </div>
+
+                <div className="google-div flex center ">
+                    <button className="flex row center"><img src={Glogo} />Continue with google</button>
+                </div>
             </div>
-        </div>
+        </main>
     )
 }
 

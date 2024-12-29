@@ -73,7 +73,10 @@ img{
     font-family: "Poppins-bold";
 }
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 
 @font-face {
     font-family: "Poppins";
@@ -83,4 +86,9 @@ img{
 @font-face {
     font-family: "Poppins-bold";
     src: url("./../../assets/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-light";
+    src: url("./../../assets/fonts/Poppins/Poppins-Light.ttf");
 }
