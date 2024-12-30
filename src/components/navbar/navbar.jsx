@@ -2,8 +2,11 @@ import React from "react";
 import "./Navbar.css"
 import "./../../ui/styles/base.css"
 import Logo from "../Logo/Logo";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+
+    
     return (
         <div className="navbar font-fam flex row space-between">
             <Logo/>
@@ -11,7 +14,7 @@ const NavBar = () => {
             <div className="btn-div flex row center">
                 <a href="#visamap">Visa Map</a>
                 <a href="#communitytrips">Community Trips</a>
-                <button className="login-btn">Sign In</button>
+                <button className="login-btn" >Sign In</button>
             </div>
 
 

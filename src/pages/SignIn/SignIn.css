@@ -45,6 +45,7 @@ button>img {
 
 .title {
     font-size: 28px;
+    text-align: center;
 }
 
 .subtitle {
@@ -92,6 +93,7 @@ button{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 
 @media (max-width: 768px) {
     .form {
