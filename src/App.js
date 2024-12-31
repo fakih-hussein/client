@@ -1,24 +1,18 @@
 import './App.css';
 import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
-import Footer from './components/Footer/Footer'
-import Navbar from './components/Navbar/Navbar'
+import Footer from './components/footer/Footer'
+import Navbar from './components/navbar/Navbar'
+import Home from './pages/HomePage/Home';
+
 
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Navbar/>}/>
-    //     <Route path="/signin" element={<SignIn/>}/>
-    //   </Routes>
-    // </Router>
     <div>
-      {/* <Navbar/> */}
-      <SignIn/>
+      <Home/>
     </div>
-
   );
 }
 

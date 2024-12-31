@@ -3,8 +3,11 @@
     height: 64px;
     padding:0 50px;
     font-family: "Poppins";
-    position: fixed;
-    
+}
+
+.navbar.dimmed {
+    background-color: rgba(0,0,0,0.5);
+    /* filter: blur(2px); */
 }
 
 .btn-div{
@@ -34,4 +37,28 @@ a{
 .logo-text{
     padding: 17px 0;
     font-size: 20px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: transparent;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
 }

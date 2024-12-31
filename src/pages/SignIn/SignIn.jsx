@@ -6,7 +6,7 @@ import "./../../ui/styles/base.css"
 
 const SignIn = () => {
     return (
-        <main>
+        
             <div className="form flex column center">
 
                 <div className="flex column center">
@@ -25,7 +25,7 @@ const SignIn = () => {
                     <button className="flex row center"><img src={Glogo} />Continue with google</button>
                 </div>
             </div>
-        </main>
+        
     )
 }
 
