@@ -3,6 +3,8 @@
     height: 64px;
     padding:0 50px;
     font-family: "Poppins";
+    position: fixed;
+    
 }
 
 .navbar.dimmed {

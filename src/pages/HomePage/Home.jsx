@@ -23,6 +23,20 @@ const Home = () =>{
                 </div>
 
             </div>
+
+            <div className="second flex column center font-fam">
+                <h2>Your AI-Powered trip</h2>
+                <div className="flex row">
+                    <div className="flex column">
+
+                    </div>
+                    <div className="flex column">
+
+                    </div>
+
+                </div>
+
+            </div>
             <Footer/>
 
         </div>
