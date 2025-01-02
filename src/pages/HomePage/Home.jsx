@@ -101,6 +101,33 @@ const Home = () => {
 
                     </div>
                 </div>
+
+                <div className="fifth flex column center full-width">
+                    <div className="flex column center">
+                        <h1 className="bold">Customized Itineraries for Every Travel Dream</h1>
+                        <p>Plan Mate AI is your ultimate companion for any travel scenario.
+                             Whether it's a solo adventure, a family vacation, or a group 
+                             expedition, our app tailors every aspect of your journey.
+                              Experience the convenience of:</p>
+                    </div>
+                    <div className="flex row">
+                        <div className="flex column center">
+                            <h3 className="bold">AI-Powered Route Optimization</h3>
+                            <p>Utilize AI for optimal travel routes. Our app ensures
+                                 a seamless journey, calculating the best paths, travel
+                                  times, and distances for city tours or cross-country 
+                                  road trips.</p>
+                        </div>
+                        <div className="flex column center">
+                            <h3 className="bold">All-in-One Travel Organizer</h3>
+                            <p>Simplify travel planning with our all-in-one platform.
+                                 Plan Mate AI consolidates hotel and flight details
+                                  and imports tips and guides. Organize all trip
+                                   details in one place. </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <Footer />
