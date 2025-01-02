@@ -2,10 +2,6 @@
     padding-top:60px;
 }
 
-.second{
-    width: 1170px;
-    height: 550px;
-}
 h1{
     font-size: 64px;
 }
@@ -16,19 +12,6 @@ h3{
     font-size: 20px;
 }
 
-.new-trip{
-    background: #2596BE;
-    color: white;
-    width: 250px;
-    height: 50px;
-    font-size: 20px;
-    gap:5px;
-}
-
-.img-second{
-    height: 235px;
-    width: 235px;
-}
 
 .second > .flex{
     width: 530;
@@ -60,4 +43,24 @@ span{
 
 .containers{
     gap: 30px;
+}
+.container{
+    border-style: solid ;
+    border-width: 1px;
+    border-radius: 15px;
+    padding: 15px 25px;
+}
+.container>p{
+    width:350px;
+}
+.container>.flex{
+    gap:15px;
+}
+.container>.flex>img{
+    width: 80px;
+    height: 80px;
+}
+
+.container>.flex>h2{
+    width: 220px;
 }

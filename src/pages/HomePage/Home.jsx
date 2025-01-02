@@ -6,7 +6,9 @@ import Footer from "../../components/footer/Footer";
 import SignIn from "../SignIn/SignIn";
 import loc from "./../../assets/images/loc-white.png"
 import map from "./../../assets/images/map.webp"
-import destinations from "./../../assets/images/destinations.webp"
+import story from "./../../assets/images/map.webp"
+import food from "./../../assets/images/food.webp"
+import destinations from "./../../assets/images/story.webp"
 
 const Home = () => {
     return (
@@ -29,41 +31,41 @@ const Home = () => {
 
                 <div className="third flex column center">
                     <div className="flex column center">
-                    <h2>The only tool you’ll ever need!</h2>
-                    <p>Say goodbye to the stress of planning 
-                        and hello to personalized recommendations, 
-                        efficient itineraries, and seamless 
-                        dining experiences.</p>
+                        <h2>The only tool you’ll ever need!</h2>
+                        <p>Say goodbye to the stress of planning
+                            and hello to personalized recommendations,
+                            efficient itineraries, and seamless
+                            dining experiences.</p>
                     </div>
-                    
+
                     <div className="containers flex row">
                         <div className="container flex column">
                             <div className="flex row">
-                                <img src="" alt></img>
+                                <img src={map} alt="map"></img>
                                 <h2 className="bold">Optimal Route Planning</h2>
                             </div>
-                            <p>Our AI algorithms analyze your 
-                                preferences to craft the most 
-                                efficient route, saving you time 
+                            <p>Our AI algorithms analyze your
+                                preferences to craft the most
+                                efficient route, saving you time
                                 and effort.</p>
                         </div>
                         <div className="container flex column">
                             <div className="flex row">
-                                <img src="" alt></img>
+                                <img src={story} alt="story"></img>
                                 <h2 className="bold">Personalize Your Adventure</h2>
                             </div>
-                            <p>Shape your journey by freely adding, 
-                                editing, or deleting activities from 
+                            <p>Shape your journey by freely adding,
+                                editing, or deleting activities from
                                 your itinerary.</p>
                         </div>
                         <div className="container flex column">
                             <div className="flex row">
-                                <img src="" alt></img>
+                                <img src={food} alt="food"></img>
                                 <h2 className="bold">Local Cuisine Recommendations</h2>
                             </div>
-                            <p>Discover local cuisines and hidden 
+                            <p>Discover local cuisines and hidden
                                 gems recommended by our AI, tailored
-                                 to your taste buds.</p>
+                                to your taste buds.</p>
                         </div>
 
                     </div>
@@ -71,7 +73,7 @@ const Home = () => {
                 </div>
             </div>
 
-            
+
             <Footer />
 
         </div>
