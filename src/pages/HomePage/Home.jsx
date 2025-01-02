@@ -3,7 +3,6 @@ import "./Home.css";
 import "./../../ui/styles/base.css"
 import NavBar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import SignIn from "../SignIn/SignIn";
 import loc from "./../../assets/images/loc-white.png"
 import map from "./../../assets/images/map.webp"
 import story from "./../../assets/images/map.webp"
@@ -13,7 +12,9 @@ import destinations from "./../../assets/images/story.webp"
 const Home = () => {
     return (
         <div>
+
             <NavBar />
+
             <div className="flex column center">
                 <div className="home flex column">
                     <div className="landing flex column center font-fam">
@@ -25,6 +26,36 @@ const Home = () => {
                             <img src={loc} alt="loc"></img>
                             Create New Trip
                         </button>
+                    </div>
+                </div>
+
+                <div className="second flex column center">
+                    <h1 className="bold">Your AI-Powered trip</h1>
+                    <div className="cards flex row ">
+                        <div className="card flex column ">
+                            <div className="text flex column">
+                                <h2 className="bold">The most optimal</h2>
+                                <p>Craft your perfect itinerary with  Plan Mate AI.
+                                     Our advanced algorithms take into account your
+                                      selected explore-sights, dining, and lodging
+                                       preferences to create the optimal travel plan
+                                        tailored just for you.</p>
+                            </div>
+                            <img src={map} alt="map"></img>
+                        </div>
+                        <div className="card flex column ">
+                            <img src={map} alt="map"></img>
+                            <div className="text flex column">
+                                <h2 className="bold">Get Inspired</h2>
+                                <p>Extract valuable travel insights from
+                                     Instagram reels and TikToks, explore
+                                      the mentioned explore-sights, and
+                                       effortlessly include them in your 
+                                       own adventure with Plan Mate AI.</p>
+                            </div>
+                            
+                        </div>
+
                     </div>
 
                 </div>
@@ -69,10 +100,8 @@ const Home = () => {
                         </div>
 
                     </div>
-
                 </div>
             </div>
-
 
             <Footer />
 
