@@ -31,14 +31,14 @@ const Home = () => {
 
                 <div className="third flex column center">
                     <div className="flex column center">
-                        <h2>The only tool you’ll ever need!</h2>
+                        <h2 className="bold">The only tool you’ll ever need!</h2>
                         <p>Say goodbye to the stress of planning
                             and hello to personalized recommendations,
                             efficient itineraries, and seamless
                             dining experiences.</p>
                     </div>
 
-                    <div className="containers flex row">
+                    <div className="containers flex row space-between">
                         <div className="container flex column">
                             <div className="flex row">
                                 <img src={map} alt="map"></img>
