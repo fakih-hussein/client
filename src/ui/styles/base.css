@@ -9,6 +9,9 @@
     display: flex;
 }
 
+.left{
+    align-items: flex-start;
+}
 .row {
     flex-direction: row;
 }
@@ -49,6 +52,8 @@
 .top{
     align-items: start;
 }
+
+
 .hidden {
     display: none;
 }

@@ -1,6 +1,11 @@
 .landing{
     padding-top:60px;
 }
+
+.second{
+    width: 1170px;
+    height: 550px;
+}
 h1{
     font-size: 64px;
 }
@@ -20,3 +25,39 @@ h3{
     gap:5px;
 }
 
+.img-second{
+    height: 235px;
+    width: 235px;
+}
+
+.second > .flex{
+    width: 530;
+    height: 440;
+}
+
+span{
+    width: 100%;
+    text-align: left;
+}
+
+.sub{
+    text-align: left;
+}
+
+.third{
+    padding-top: 145px;
+    gap:35px;
+}
+.third>.flex>h2{
+    font-size: 48px;
+}
+
+.third>.flex>p{
+    width: 730px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.containers{
+    gap: 30px;
+}
