@@ -12,7 +12,7 @@
     font-size: 20px;
 }
 
-.new-trip{
+.new-trip-btn{
     background: #2596BE;
     color: white;
     width: 250px;
@@ -21,35 +21,17 @@
     gap:5px;
 }
 
-.img-second{
-    height: 235px;
-    width: 235px;
+.second{
+    padding-top: 75px;
+    gap:45px;
 }
 
-.second > .flex{
-    width: 530;
-    height: 440;
-}
-
-span{
-    width: 100%;
-    text-align: left;
-}
-
-.sub{
-    text-align: left;
-}
 
 .third{
-    width:100%;
     padding-top: 145px;
-    padding-left: 50px;
-    padding-right: 50px;
     gap:35px;
 }
-.third>.flex>h2{
-    font-size: 48px;
-}
+
 
 .third>.flex>p{
     width: 730px;
@@ -82,4 +64,16 @@ span{
 
 .container>.flex>h2{
     width: 220px;
+}
+
+.card{
+    flex:1;
+}
+.card>.flex>img{
+    height: 235px;
+    width: 235px;
+}
+.cards{
+    padding-left: 50px;
+    padding-right: 50px;
 }

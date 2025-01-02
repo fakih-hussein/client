@@ -5,9 +5,9 @@ import NavBar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import loc from "./../../assets/images/loc-white.png"
 import map from "./../../assets/images/map.webp"
-import story from "./../../assets/images/map.webp"
+import story from "./../../assets/images/story.webp"
 import food from "./../../assets/images/food.webp"
-import destinations from "./../../assets/images/story.webp"
+import destinations from "./../../assets/images/destinations.webp"
 
 const Home = () => {
     return (
@@ -22,16 +22,16 @@ const Home = () => {
                         <h3>Build, personalize, and optimize your itineraries
                             with our free AI trip planner. Designed for vacations,
                             workations, and everyday adventures.</h3>
-                        <button className="new-trip flex row center">
+                        <button className="new-trip-btn flex row center">
                             <img src={loc} alt="loc"></img>
                             Create New Trip
                         </button>
                     </div>
                 </div>
 
-                <div className="second flex column center">
+                <div className="second flex column center full-width">
                     <h1 className="bold">Your AI-Powered trip</h1>
-                    <div className="cards flex row ">
+                    <div className="cards flex row space-between ">
                         <div className="card flex column ">
                             <div className="text flex column">
                                 <h2 className="bold">The most optimal</h2>
@@ -41,10 +41,10 @@ const Home = () => {
                                        preferences to create the optimal travel plan
                                         tailored just for you.</p>
                             </div>
-                            <img src={map} alt="map"></img>
+                            <div className="flex center"><img src={map} alt="map"></img></div>
                         </div>
                         <div className="card flex column ">
-                            <img src={map} alt="map"></img>
+                            <div className="flex center"><img src={destinations} alt="dest"></img></div>
                             <div className="text flex column">
                                 <h2 className="bold">Get Inspired</h2>
                                 <p>Extract valuable travel insights from
@@ -60,9 +60,9 @@ const Home = () => {
 
                 </div>
 
-                <div className="third flex column center">
+                <div className="third flex column center full-width">
                     <div className="flex column center">
-                        <h2 className="bold">The only tool you’ll ever need!</h2>
+                        <h1 className="bold">The only tool you’ll ever need!</h1>
                         <p>Say goodbye to the stress of planning
                             and hello to personalized recommendations,
                             efficient itineraries, and seamless
