@@ -13,7 +13,7 @@ const SignUp = () => {
         dispatch(showSignIn());
     }
     return (
-        <main>
+        
             <div className="form flex column center">
 
                 <div className="flex column center">
@@ -33,7 +33,7 @@ const SignUp = () => {
                     <button className="flex row center"><img src={Glogo} />Sign Up with google</button>
                 </div>
             </div>
-        </main>
+        
     )
 }
 

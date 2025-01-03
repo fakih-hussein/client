@@ -1,4 +1,7 @@
 import react from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { closeForm } from "../../redux/modalSlice";
+
 import "./Home.css";
 import "./../../ui/styles/base.css"
 import NavBar from "../../components/navbar/Navbar";
@@ -8,8 +11,11 @@ import map from "./../../assets/images/map.webp"
 import story from "./../../assets/images/story.webp"
 import food from "./../../assets/images/food.webp"
 import destinations from "./../../assets/images/destinations.webp"
+import SignIn from "../SignIn/SignIn";
+import SignUp from "../SignUp/SignUp";
 
 const Home = () => {
+    
     return (
         <div>
 
@@ -131,6 +137,7 @@ const Home = () => {
             </div>
 
             <Footer />
+            
 
         </div>
     )

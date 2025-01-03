@@ -11,6 +11,14 @@ import { showSignIn } from "../../redux/modalSlice";
 const NavBar = () => {
 
     const dispatch = useDispatch();
+    const formType = useSelector((state) => {
+        console.log(state);
+        return state.modal.formType;
+    })
+
+    const handleCloseForm = () => {
+        dispatch(closeForm());
+    }
 
     const handleSignInClick = () => {
         dispatch(showSignIn());
@@ -25,6 +33,14 @@ const NavBar = () => {
                 <a href="#communitytrips">Community Trips</a>
                 <button className="login-btn" onClick={handleSignInClick}>Sign In</button>
             </div>
+            {formType && (
+                <div className="modal flex center">
+                    <div className="overlay" onClick={handleCloseForm}></div>
+                        {formType==="SignIn" && <SignIn/>}
+                        {formType==="SignUp" && <SignUp/>}
+                    </div>
+
+            )}
         </div>
     )
 }
