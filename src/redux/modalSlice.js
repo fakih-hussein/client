@@ -1,19 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
+import SignIn from "../pages/SignIn/SignIn";
+
+const initialState={
+    formType: null,
+};
 
 const modalSlice = createSlice({
     name: "modal",
-    initialState: {
-        isModalOpen: false,
-    },
+    initialState,
     reducers: {
-        openModal: (state) => {
-            state.isModalOpen = true;
+        showSignIn: (state) => {
+            state.formType = "SignIn";
         },
-        closeModal: (state) => {
-            state.isModalOpen = false;
+        showSignUp: (state) => {
+            state.formType = "SignUp";
+        },
+        closeForm: (state) => {
+            state.formType = null;
         }
+        
     }
 })
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const { showSignIn,showSignUp,closeForm } = modalSlice.actions;
 export default modalSlice.reducer;
