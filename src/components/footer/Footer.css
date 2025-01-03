@@ -46,3 +46,23 @@
     }
 }
 
+@media (max-width: 480px) {
+    .footer-text {
+        font-size: 12px;
+        height: auto;
+        width: 100%;
+        max-width: 386px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+
+    .right-footer,
+    .left-footer {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
