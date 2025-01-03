@@ -4,7 +4,14 @@ import logo from "./../../assets/images/logo.png"
 import Glogo from "./../../assets/images/google-logo.png"
 import "./../../ui/styles/base.css"
 
+import { useDispatch } from "react-redux";
+import { showSignIn, showSignUp } from "../../redux/modalSlice";
+
 const SignUp = () => {
+    const dispatch=useDispatch();
+    const handleSignInClick=()=>{
+        dispatch(showSignIn());
+    }
     return (
         <main>
             <div className="form flex column center">
@@ -14,7 +21,7 @@ const SignUp = () => {
                     <p className="title bold">Sign Up</p>
                     <p className="subtitle">Signing up with Plan Mate AI is fast and free.</p>
                 </div>
-                <p className="link">Already have an account? <a href="#signup" className="bold">Sign In</a></p>
+                <p className="link">Already have an account? <a onClick={handleSignInClick} className="bold">Sign In</a></p>
                 <div className="input flex column space-between">
                     <input className="font-fam" type="email" placeholder="Email" />
                     <input className="font-fam" type="password" placeholder="Password" />
