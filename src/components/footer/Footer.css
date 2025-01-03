@@ -1,27 +1,29 @@
-.footer{
-    margin:0px 50px;
+.footer {
+    margin: 0px 50px;
     border-top: 1px solid black;
+
 }
 
-.footer-text{
+.footer-text {
     height: 48px;
     width: 386px;
-    
+
 }
 
-.right-footer{
-    gap:25px;
+.right-footer {
+    gap: 25px;
     padding-top: 20px;
 }
 
-.left-footer{
-    gap:20px;
+.left-footer {
+    gap: 20px;
     padding-top: 20px;
 
 }
 
-.title{
+.title {
     width: 175px;
     font-size: 16px;
 
 }
+
