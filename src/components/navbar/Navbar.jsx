@@ -2,10 +2,12 @@ import React from "react";
 import "./Navbar.css"
 import "./../../ui/styles/base.css"
 import Logo from "../Logo/Logo";
+import SignIn from "./../../pages/SignIn/SignIn";
+import SignUp from "./../../pages/SignUp/SignUp";
 
 
-import { useDispatch } from "react-redux";
-import { showSignIn } from "../../redux/modalSlice";
+import { useDispatch, useSelector} from "react-redux";
+import { showSignIn, closeForm } from "../../redux/modalSlice";
 
 
 const NavBar = () => {
