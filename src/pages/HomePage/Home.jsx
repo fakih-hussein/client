@@ -11,8 +11,6 @@ import map from "./../../assets/images/map.webp"
 import story from "./../../assets/images/story.webp"
 import food from "./../../assets/images/food.webp"
 import destinations from "./../../assets/images/destinations.webp"
-import SignIn from "../SignIn/SignIn";
-import SignUp from "../SignUp/SignUp";
 
 const Home = () => {
     

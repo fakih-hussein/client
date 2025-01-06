@@ -1,0 +1,22 @@
+h1{
+    padding-top: 100px;
+}
+h3{
+    font-family: "Poppins-light";
+}
+
+.main-container{
+    gap:20px;
+}
+
+input{
+    width: 580px;
+    height: 42px;
+    border-radius: 10px;
+    border: solid 1px #AAAA;
+}
+
+.map{
+    padding-top: 35px;
+    padding-bottom: 30px;
+}
