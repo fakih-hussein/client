@@ -2,6 +2,7 @@ import React from "react";
 import "./VisaMap.css";
 import NavBar from "./../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import WorldMap from "../../components/Map/Map";
 import "./../../ui/styles/base.css";
 
 const VisaMap = () => {
@@ -16,9 +17,7 @@ const VisaMap = () => {
 
                 <input type="text" placeholder="search a country" />
             </div>
-            <div className="map">
-                
-            </div>
+            <WorldMap/>
             <Footer/>
         </main>
     )
