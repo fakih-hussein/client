@@ -6,6 +6,24 @@ import './Map.css';
 
 const WorldMap = () => {
   const countries = feature(worldData, worldData.objects.countries).features;
+
+  const handleMouseEnter = (geo, event) => {
+    const { pageX, pageY } = event;
+    setTooltip({
+      name: geo.properties.name,
+      x: pageX,
+      y: pageY,
+    });
+  };
+
+  const handleMouseMove = (event) => {
+    const { pageX, pageY } = event;
+    setTooltip((prev) => ({ ...prev, x: pageX, y: pageY }));
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ name: '', x: 0, y: 0 });
+  };
   return (
     <div className="map-container">
       <ComposableMap className="map">
