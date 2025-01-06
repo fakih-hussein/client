@@ -49,6 +49,23 @@ const WorldMap = () => {
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
+      {tooltip.name && (
+        <div
+          style={{
+            position: 'absolute',
+            left: tooltip.x + 10, // Offset to avoid overlapping with the cursor
+            top: tooltip.y + 10,
+            backgroundColor: 'white',
+            border: '1px solid #ccc',
+            padding: '5px',
+            borderRadius: '5px',
+            pointerEvents: 'none',
+            zIndex: 1000,
+          }}
+        >
+          {tooltip.name}
+        </div>
+      )}
     </div>
   );
 }
