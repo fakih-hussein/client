@@ -20,28 +20,66 @@ const SignUp = () => {
             [e.target.name]:e.target.value,
         });
     }
-    
+
     const [formData, setFormData] = useState({
         email: "",
         password: "",
         password_confirmation: "",
 
     })
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = 'Name is required.';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required.';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Email is not valid.';
+        }
+
+        if (!formData.password) {
+            newErrors.password = 'Password is required.';
+        } else if (formData.password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters.';
+        }
+
+        if (formData.password_confirmation !== formData.password) {
+            newErrors.password_confirmation = 'Passwords do not match.';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!validateForm()) {
+            return; // Stop form submission if validation fails
+        }
 
         try {
             const response = await axios.post('http://localhost:8000/api/signup', formData);
             console.log(response.data.message);
         } catch (error) {
             console.error(error);
+            if (error.response && error.response.data) {
+                setErrors(error.response.data.errors || {});
+            } else {
+                alert('Registration failed. Please try again.');
+            }
         }
+        
 
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="form flex column center">
+        <form onSubmit={handleSubmit} noValidate>
+            <div className="form flex column center font-fam">
 
                 <div className="flex column center">
                     <div className="logo"><img src={logo} alt="logo" /></div>
@@ -50,10 +88,13 @@ const SignUp = () => {
                 </div>
                 <p className="link">Already have an account? <a onClick={handleSignInClick} className="bold">Sign In</a></p>
                 <div className="input flex column space-between">
-                    <input className="font-fam" type="email" placeholder="Email" />
-                    <input className="font-fam" type="password" placeholder="Password" />
-                    <input className="font-fam" type="password" placeholder="Confirm Password" />
-                    <button className="font-fam" type="submit">Continue</button>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
+                    {errors.email && <small style={{ color: 'red' }}>{errors.email}</small>}
+                    <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" />
+                    {errors.password && <small style={{ color: 'red' }}>{errors.password}</small>}
+                    <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange} placeholder="Confirm Password" />
+                    {errors.password_confirmation && (<small style={{ color: 'red' }}>{errors.password_confirmation}</small>)}
+                    <button type="submit">Continue</button>
                 </div>
 
                 <div className="google-div flex center ">
