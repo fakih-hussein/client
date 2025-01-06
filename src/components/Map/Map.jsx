@@ -6,7 +6,8 @@ import './Map.css';
 
 const WorldMap = () => {
   const countries = feature(worldData, worldData.objects.countries).features;
-
+  const [tooltip, setTooltip] = useState({ name: '', x: 0, y: 0 });
+  
   const handleMouseEnter = (geo, event) => {
     const { pageX, pageY } = event;
     setTooltip({
