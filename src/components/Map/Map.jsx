@@ -3,6 +3,7 @@ import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simp
 import { feature } from 'topojson-client';
 import worldData from 'world-atlas/countries-110m.json';
 import './Map.css';
+import "./../../ui/styles/base.css"
 
 const WorldMap = () => {
   const countries = feature(worldData, worldData.objects.countries).features;
@@ -26,9 +27,9 @@ const WorldMap = () => {
     setTooltip({ name: '', x: 0, y: 0 });
   };
   return (
-    <div className="map-container">
+    <div className="map-container flex center">
       <ComposableMap className="map">
-        <ZoomableGroup center={[0, 20]} zoom={1} minZoom={1} maxZoom={8} translateExtent={[[0, 0], [1000, 1000]]}>
+        {/* <ZoomableGroup center={[0, 20]} zoom={1} minZoom={1} maxZoom={8} translateExtent={[[0, 0], [1000, 1000]]}> */}
           <Geographies geography={countries}>
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -47,7 +48,7 @@ const WorldMap = () => {
               ))
             }
           </Geographies>
-        </ZoomableGroup>
+        {/* </ZoomableGroup> */}
       </ComposableMap>
       {tooltip.name && (
         <div
