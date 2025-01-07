@@ -1,4 +1,4 @@
-import React,  {useState, useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import "./SignIn.css"
 import logo from "./../../assets/images/logo.png"
 import Glogo from "./../../assets/images/google-logo.png"
@@ -18,38 +18,65 @@ const SignIn = () => {
     }
 
     const [errors, setErrors] = useState("");
+    const [credentialError, setCredentialError] = useState("");
     const [formData, setFormData] = useState({
         email: "",
         password: "",
     });
 
     // const navigate=useNavigate();
- 
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
+        setError({
+            ...credentialError,
+            [e.target.name]:""
+        })
         setErrors({
             ...errors,
-            [e.target.name]: '',
+            [e.target.name]: "",
         });
     }
 
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required.';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Email is not valid.';
+        } 
+
+        if (!formData.password) {
+            newErrors.password = 'Password is required.';
+        } else if (formData.password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters.';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!validateForm()) {
+            return; 
+        }
         try {
             const response = await axios.post('http://localhost:8000/api/login', formData);
             console.log(response);
             if (response.status === 200) {
                 localStorage.setItem("token", response.data.token);
-                
+
             } else {
                 setErrors(response.data.message);
                 console.log(response.data.message);
             }
         } catch (error) {
-            setErrors(error.response.data.message);
+            setCredentialError(error.response.data.message);
             console.log(error.response.data.message);
         }
     }
@@ -59,7 +86,7 @@ const SignIn = () => {
     }, [formData]);
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
             <div className="form flex column center font-fam">
 
                 <div className="flex column center">
@@ -69,9 +96,16 @@ const SignIn = () => {
                 </div>
                 <p className="link">New to Plan Mate AI? <a className="bold" onClick={handleSignUpClick}>Sign Up</a></p>
                 <div className="input flex column space-between">
-                    <input name="email" type="email" placeholder="Email" onChange={handleChange} />
-                    <input name="password" type="password" placeholder="Password" onChange={handleChange} />
+
+                    <input name="email" type="email" value={formData.email} placeholder="Email" onChange={handleChange} />
+                    {errors.email && <small>{errors.email}</small>}
+
+                    <input name="password" type="password" value={formData.password} placeholder="Password" onChange={handleChange} />
+                    {errors.password && <small>{errors.password}</small>}
+                    
+
                     <button type="submit">Continue</button>
+                    {error && <small>{error}</small> }
                 </div>
 
                 <div className="google-div flex center ">
