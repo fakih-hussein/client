@@ -35,20 +35,23 @@ const SignIn = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:8000/api/login', formData);
-            console.log(response.data.message);
-        } catch (error) {
-            console.error(error);
-            if (error.response && error.response.data) {
-                setErrors(error.response.data.errors || {});
+            console.log(response);
+            if (response.status === 200) {
+                localStorage.setItem("token", response.data.token);
+                navigate("/newtrip")
             } else {
-                alert('Login failed. Please try again.');
+                setErrors(response.data.message);
+                console.log(response.data.message);
             }
+        } catch (error) {
+            setErrors(error.response.data.message);
+            console.log(error.response.data.message);
         }
 
 
     }
     return (
-        
+
         <div className="form flex column center">
 
             <div className="flex column center">
