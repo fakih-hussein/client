@@ -1,4 +1,4 @@
-import React from "react";
+import React,  {useState, useEffect}from "react";
 import "./SignIn.css"
 import logo from "./../../assets/images/logo.png"
 import Glogo from "./../../assets/images/google-logo.png"
@@ -7,6 +7,9 @@ import SignUp from "../SignUp/SignUp";
 
 import { useDispatch } from "react-redux";
 import { showSignUp } from "../../redux/modalSlice";
+
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const dispatch = useDispatch();
@@ -20,6 +23,8 @@ const SignIn = () => {
         password: "",
     });
 
+    // const navigate=useNavigate();
+ 
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -38,7 +43,7 @@ const SignIn = () => {
             console.log(response);
             if (response.status === 200) {
                 localStorage.setItem("token", response.data.token);
-                navigate("/newtrip")
+                
             } else {
                 setErrors(response.data.message);
                 console.log(response.data.message);
@@ -50,30 +55,31 @@ const SignIn = () => {
     }
 
     useEffect(() => {
-        console.log(form);
-      }, [form]);
-      
+        // console.log(formData);
+    }, [formData]);
+
     return (
+        <form onSubmit={handleSubmit}>
+            <div className="form flex column center font-fam">
 
-        <div className="form flex column center">
+                <div className="flex column center">
+                    <div className="logo"><img src={logo} alt="logo" /></div>
+                    <p className="title bold">Sign In</p>
+                    <p className="subtitle">Sign in to save your trip plans and access them on any device.</p>
+                </div>
+                <p className="link">New to Plan Mate AI? <a className="bold" onClick={handleSignUpClick}>Sign Up</a></p>
+                <div className="input flex column space-between">
+                    <input name="email" type="email" placeholder="Email" onChange={handleChange} />
+                    <input name="password" type="password" placeholder="Password" onChange={handleChange} />
+                    <button type="submit">Continue</button>
+                </div>
 
-            <div className="flex column center">
-                <div className="logo"><img src={logo} alt="logo" /></div>
-                <p className="title bold">Sign In</p>
-                <p className="subtitle">Sign in to save your trip plans and access them on any device.</p>
+                <div className="google-div flex center ">
+                    <button className="flex row center"><img src={Glogo} />Continue with google</button>
+                </div>
+
             </div>
-            <p className="link">New to Plan Mate AI? <a className="bold" onClick={handleSignUpClick}>Sign Up</a></p>
-            <div className="input flex column space-between">
-                <input className="font-fam" type="email" placeholder="Email" />
-                <input className="font-fam" type="password" placeholder="Password" />
-                <button className="font-fam" type="submit">Continue</button>
-            </div>
-
-            <div className="google-div flex center ">
-                <button className="flex row center"><img src={Glogo} />Continue with google</button>
-            </div>
-
-        </div>
+        </form>
 
 
     )

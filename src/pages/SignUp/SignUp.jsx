@@ -82,24 +82,34 @@ const SignUp = () => {
             <div className="form flex column center font-fam">
 
                 <div className="flex column center">
+
                     <div className="logo"><img src={logo} alt="logo" /></div>
                     <p className="title bold">Sign Up</p>
                     <p className="subtitle">Signing up with Plan Mate AI is fast and free.</p>
+                
                 </div>
+                
                 <p className="link">Already have an account? <a onClick={handleSignInClick} className="bold">Sign In</a></p>
+                
                 <div className="input flex column space-between">
+                    
                     <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
-                    {errors.email && <small style={{ color: 'red' }}>{errors.email}</small>}
+                    {errors.email && <small>{errors.email}</small>}
+                    
                     <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="Password" />
-                    {errors.password && <small style={{ color: 'red' }}>{errors.password}</small>}
+                    {errors.password && <small>{errors.password}</small>}
+                   
                     <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange} placeholder="Confirm Password" />
-                    {errors.password_confirmation && (<small style={{ color: 'red' }}>{errors.password_confirmation}</small>)}
+                    {errors.password_confirmation && (<small>{errors.password_confirmation}</small>)}
+                   
                     <button type="submit">Continue</button>
+               
                 </div>
 
                 <div className="google-div flex center ">
                     <button className="flex row center"><img src={Glogo} />Sign Up with google</button>
                 </div>
+
             </div>
         </form>
     )

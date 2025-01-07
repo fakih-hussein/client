@@ -88,6 +88,9 @@ button {
     padding-bottom: 20px;
 }
 
+small{
+    color:red;
+}
 @media (max-width: 768px) {
     .form {
         width: 95%;
