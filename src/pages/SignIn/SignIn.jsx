@@ -47,9 +47,12 @@ const SignIn = () => {
             setErrors(error.response.data.message);
             console.log(error.response.data.message);
         }
-
-
     }
+
+    useEffect(() => {
+        console.log(form);
+      }, [form]);
+      
     return (
 
         <div className="form flex column center">
