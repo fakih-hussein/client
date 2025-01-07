@@ -10,10 +10,15 @@ import { showSignUp } from "../../redux/modalSlice";
 
 const SignIn = () => {
     const dispatch = useDispatch();
-
     const handleSignUpClick = () => {
         dispatch(showSignUp());
     }
+
+    const [error, setError] = useState("");
+    const [form, setLoginForm] = useState({
+        email: "",
+        password: "",
+    });
 
     return (
 
@@ -34,7 +39,7 @@ const SignIn = () => {
             <div className="google-div flex center ">
                 <button className="flex row center"><img src={Glogo} />Continue with google</button>
             </div>
-            
+
         </div>
 
 
