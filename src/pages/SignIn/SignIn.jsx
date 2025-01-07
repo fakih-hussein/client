@@ -14,11 +14,22 @@ const SignIn = () => {
         dispatch(showSignUp());
     }
 
-    const [error, setError] = useState("");
-    const [form, setLoginForm] = useState({
+    const [errors, setErrors] = useState("");
+    const [formData, setFormData] = useState({
         email: "",
         password: "",
     });
+
+    const handleChange =(e)=>{
+        setFormData({
+            ...formData,
+            [e.target.name]:e.target.value,
+        });
+        setErrors({
+            ...errors,
+            [e.target.name]: '',
+        });
+    }
 
     return (
 
