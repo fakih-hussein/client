@@ -19,6 +19,10 @@ const SignUp = () => {
             ...formData,
             [e.target.name]:e.target.value,
         });
+        setErrors({
+            ...errors,
+            [e.target.name]: '',
+        });
     }
 
     const [formData, setFormData] = useState({
@@ -31,10 +35,6 @@ const SignUp = () => {
 
     const validateForm = () => {
         const newErrors = {};
-
-        if (!formData.name.trim()) {
-            newErrors.name = 'Name is required.';
-        }
 
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required.';
@@ -60,11 +60,11 @@ const SignUp = () => {
         e.preventDefault();
 
         if (!validateForm()) {
-            return; // Stop form submission if validation fails
+            return; 
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/api/signup', formData);
+            const response = await axios.post('http://localhost:8000/api/register', formData);
             console.log(response.data.message);
         } catch (error) {
             console.error(error);
