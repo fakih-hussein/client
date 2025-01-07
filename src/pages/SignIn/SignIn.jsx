@@ -20,10 +20,10 @@ const SignIn = () => {
         password: "",
     });
 
-    const handleChange =(e)=>{
+    const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]:e.target.value,
+            [e.target.name]: e.target.value,
         });
         setErrors({
             ...errors,
@@ -31,8 +31,24 @@ const SignIn = () => {
         });
     }
 
-    return (
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8000/api/login', formData);
+            console.log(response.data.message);
+        } catch (error) {
+            console.error(error);
+            if (error.response && error.response.data) {
+                setErrors(error.response.data.errors || {});
+            } else {
+                alert('Login failed. Please try again.');
+            }
+        }
 
+
+    }
+    return (
+        
         <div className="form flex column center">
 
             <div className="flex column center">
